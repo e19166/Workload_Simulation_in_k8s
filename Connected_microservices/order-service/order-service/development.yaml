@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-service-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order-service-1
+  template:
+    metadata:
+      labels:
+        app: order-service-1
+    spec:
+      containers:
+      - name: order-service-1
+        image: wishula/order-service:1.0.0
+        ports:
+        - containerPort: 9091
+        resources:
+          requests:
+            memory: "64Mi"  # Minimum memory required for the container
+            cpu: "64m"       # Minimum CPU required for the container
+          limits:
+            memory: "256Mi"  # Maximum memory the container can use
+            cpu: "128m"       # Maximum CPU the container can use

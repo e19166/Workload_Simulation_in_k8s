@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-service
+  template:
+    metadata:
+      labels:
+        app: product-service
+    spec:
+      containers:
+      - name: product-service
+        image: wishula/product-service:1.0.0
+        ports:
+        - containerPort: 9090
+        resources:
+          requests:
+            memory: "128Mi"  # Minimum memory required for the container
+            cpu: "128m"       # Minimum CPU required for the container
+          limits:
+            memory: "512Mi"  # Maximum memory the container can use
+            cpu: "256m"       # Maximum CPU the container can use

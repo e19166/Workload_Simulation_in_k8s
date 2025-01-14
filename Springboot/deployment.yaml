@@ -2,8 +2,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: order-service
+  annotations:
+    prometheus.io/scrape: "true"
+    prometheus.io/port: "8083"
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: order-service
@@ -19,8 +22,8 @@ spec:
         - containerPort: 8081
         resources:
           requests:
-            memory: "128Mi"  # Minimum memory required for the container
-            cpu: "250m"      # Minimum CPU required for the container
+            memory: "256Mi"  # Minimum memory required for the container
+            cpu: "256m"      # Minimum CPU required for the container
           limits:
-            memory: "256Mi"  # Maximum memory the container can use
-            cpu: "500m"      # Maximum CPU the container can use
+            memory: "512Mi"  # Maximum memory the container can use
+            cpu: "512m"      # Maximum CPU the container can use

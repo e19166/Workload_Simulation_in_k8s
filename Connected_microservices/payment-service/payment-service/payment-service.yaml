@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: payment-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: payment-service
+  template:
+    metadata:
+      labels:
+        app: payment-service
+    spec:
+      containers:
+      - name: payment-service
+        image: wishula/payment-service:1.0.0
+        ports:
+        - containerPort: 9092
+        resources:
+          requests:
+            memory: "512Mi"  # Minimum memory required for the container
+            cpu: "128m"       # Minimum CPU required for the container
+          limits:
+            memory: "1024Mi"  # Maximum memory the container can use
+            cpu: "256m"       # Maximum CPU the container can use
