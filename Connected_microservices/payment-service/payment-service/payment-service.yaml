@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: payment-service
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: payment-service
@@ -22,5 +22,5 @@ spec:
             memory: "512Mi"  # Minimum memory required for the container
             cpu: "128m"       # Minimum CPU required for the container
           limits:
-            memory: "1024Mi"  # Maximum memory the container can use
+            memory: "900Mi"  # Maximum memory the container can use
             cpu: "256m"       # Maximum CPU the container can use

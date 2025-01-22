@@ -26,4 +26,4 @@ spec:
             cpu: "256m"      # Minimum CPU required for the container
           limits:
             memory: "512Mi"  # Maximum memory the container can use
-            cpu: "512m"      # Maximum CPU the container can use
+            cpu: "400m"      # Maximum CPU the container can use
