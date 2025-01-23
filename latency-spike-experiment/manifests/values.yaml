@@ -48,6 +48,11 @@ configmapReload:
     #       optional: false
 
   prometheus:
+    prometheusSpec:
+      additionalScrapeConfigs:
+        - job_name: 'nginx-app'
+          static_configs:
+            - targets: ['nginx-app.latency-test.svc.cluster.local:80']
     ## If false, the configmap-reload container will not be deployed
     ##
     enabled: true
