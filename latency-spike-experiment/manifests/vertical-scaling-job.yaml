@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: vertical-scaling-job
+  namespace: latency-test
+spec:
+  template:
+    spec:
+      containers:
+        - name: scale-pod
+          image: bitnami/kubectl:latest
+          command: ["/bin/bash", "-c"]
+          args:
+          - |
+            while true; do
+              kubectl -n latency-test patch deployment nginx-app -p '{"spec":{"template":{"spec":{"containers":[{"name":"nginx","resources":{"limits":{"cpu":"1000m","memory":"512Mi"},"requests":{"cpu":"500m","memory":"256Mi"}}}]}}}}'
+              sleep 60
+            done
+      restartPolicy: Never
