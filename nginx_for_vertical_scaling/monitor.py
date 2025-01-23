@@ -2,7 +2,7 @@ import time
 import requests
 from datetime import datetime
 
-url = "http://localhost:8080"  
+url = "http://localhost:31413"  
 output_file = "latency_log.txt"
 
 def monitor_latency():
@@ -17,7 +17,7 @@ def monitor_latency():
             except requests.exceptions.RequestException as e:
                 f.write(f"{datetime.now()}, ERROR, {str(e)}\n")
                 print(f"{datetime.now()} - ERROR: {str(e)}")
-            time.sleep(1)
+            time.sleep(0.5)
 
 if __name__ == "__main__":
     monitor_latency()
