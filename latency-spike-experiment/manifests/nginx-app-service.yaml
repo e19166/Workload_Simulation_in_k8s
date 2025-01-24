@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-app-service
+  namespace: latency-test
+spec:
+  selector:
+    app: nginx-app
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80  # For web traffic
+    - name: metrics
+      protocol: TCP
+      port: 9113
+      targetPort: 9113  # For Prometheus metrics
+  type: ClusterIP

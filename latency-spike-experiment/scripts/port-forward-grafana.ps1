@@ -2,4 +2,4 @@
 # Port-forwards Grafana to access it locally.
 
 Write-Host "Port-forwarding Grafana..."
-kubectl port-forward svc/prometheus-grafana -n monitoring 3000:80
+kubectl port-forward svc/kube-prometheus-stack-grafana -n prometheus 3000:80
