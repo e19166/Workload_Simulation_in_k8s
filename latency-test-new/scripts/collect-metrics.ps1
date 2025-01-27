@@ -1,8 +1,8 @@
 # Define variables
-$serviceUrl = "http://localhost:8083"  # Replace with your service URL or NodePort
-$endpoint = "$serviceUrl/"  # Replace 'your-endpoint' with the actual API path
-$deploymentName = "app-deployment"  # Replace with your deployment name
-$namespace = "default"  # Replace with your namespace if not default
+$serviceUrl = "http://localhost:8083"  
+$endpoint = "$serviceUrl/"  
+$deploymentName = "app-deployment"  
+$namespace = "default"  
 
 # CSV file path for logging latency
 $csvFile = "latency_data.csv"
@@ -94,7 +94,7 @@ for ($i = 1; $i -le 10; $i++) {
 
     # Wait for the scaling operation to complete
     Write-Host "Waiting for the scaling operation to complete..."
-    Start-Sleep -Seconds 10  # Adjust this based on your scaling time
+    Start-Sleep -Seconds 10  
 
     # Log latency after scaling
     $latencySum = 0
@@ -131,7 +131,7 @@ for ($i = 0; $i -lt 100; $i++) {
         Write-Host "Continuous Latency #$($i+1): $continuousLatency seconds"
         "Continuous Latency #$($i+1),$continuousLatency" | Out-File -FilePath $csvFile -Append
     }
-    Start-Sleep -Seconds 0.5  # Adjust this interval to suit your needs
+    Start-Sleep -Seconds 0.5  
 } #>
 
 # Output completion
