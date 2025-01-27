@@ -1,0 +1,12 @@
+Action,Latency
+Before Scaling,2.210888
+Degrade Step 1,2.2210997
+Degrade Step 2,2.2223963
+Degrade Step 3,2.2235811
+Degrade Step 4,2.2256417
+Degrade Step 5,2.2267725
+Degrade Step 6,2.2276436
+Degrade Step 7,2.2317443
+Degrade Step 8,2.2377
+Degrade Step 9,2.2442952
+Degrade Step 10,2.2480156

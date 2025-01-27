@@ -1,0 +1,14 @@
+2025-01-25 00:35:59,151 - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:8082
+ * Running on http://192.168.1.101:8082
+2025-01-25 00:35:59,151 - [33mPress CTRL+C to quit[0m
+2025-01-25 00:35:59,154 -  * Restarting with stat
+2025-01-25 00:35:59,588 -  * Debugger is active!
+2025-01-25 00:35:59,598 -  * Debugger PIN: 393-036-219
+2025-01-25 00:36:11,265 - Request ID: 127.0.0.1, Latency: 0.013698 seconds
+2025-01-25 00:36:11,265 - 127.0.0.1 - - [25/Jan/2025 00:36:11] "GET / HTTP/1.1" 200 -
+2025-01-25 00:36:35,821 - Request ID: 127.0.0.1, Latency: 0.010818 seconds
+2025-01-25 00:36:35,821 - 127.0.0.1 - - [25/Jan/2025 00:36:35] "GET / HTTP/1.1" 200 -
+2025-01-25 00:36:48,783 - Request ID: 127.0.0.1, Latency: 0.012248 seconds
+2025-01-25 00:36:48,783 - 127.0.0.1 - - [25/Jan/2025 00:36:48] "GET / HTTP/1.1" 200 -
