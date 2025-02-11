@@ -21,7 +21,7 @@ spec:
         - name: flask-app
           image: wishula/flask-prometheus-app:latest
           ports:
-            - containerPort: 5000  # REST API por
+            - containerPort: 5000 
           resources:
             requests:
               memory: "100Mi"

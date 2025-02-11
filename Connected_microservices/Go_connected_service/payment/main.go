@@ -1,3 +1,4 @@
+//Auther: Wishula Jayathunga
 package main
 
 import (

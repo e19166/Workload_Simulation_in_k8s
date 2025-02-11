@@ -1,3 +1,4 @@
+// Author: Wishula Jayathunga
 package com.example.order_service.model;
 
 import jakarta.persistence.Entity;

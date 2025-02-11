@@ -1,3 +1,4 @@
+// Author: Wishula Jayathunga
 package main
 
 import (

@@ -62,7 +62,7 @@ $cpuLimits = 1000
 $memoryRequests = 256
 $memoryLimits = 600
 
-for ($i = 1; $i -le 10; $i++) {
+for ($i = 1; $i -le 100; $i++) {
     # Apply vertical scaling
     Write-Host "Decreasing CPU limits (Step $i)..."
     kubectl patch deployment $deploymentName -n $namespace -p @"
