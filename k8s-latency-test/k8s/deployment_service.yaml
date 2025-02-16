@@ -1,0 +1,39 @@
+apiVersion: apps/v1  
+kind: Deployment  
+metadata:  
+  name: k8s-latency-app  
+spec:  
+  replicas: 1  
+  selector:  
+    matchLabels:  
+      app: k8s-latency-app  
+  template:  
+    metadata:  
+      labels:  
+        app: k8s-latency-app  
+    spec:  
+      containers:  
+      - name: k8s-latency-app  
+        image: myrepo/k8s-latency-app:latest  
+        ports:  
+        - containerPort: 8085  
+        resources:  
+          requests:  
+            cpu: "200m"  
+            memory: "256Mi"  
+          limits:  
+            cpu: "500m"  
+            memory: "512Mi"  
+---
+apiVersion: v1  
+kind: Service  
+metadata:  
+  name: k8s-latency-service  
+spec:  
+  selector:  
+    app: k8s-latency-app  
+  ports:  
+    - protocol: TCP  
+      port: 80  
+      targetPort: 8085  
+  type: ClusterIP  
