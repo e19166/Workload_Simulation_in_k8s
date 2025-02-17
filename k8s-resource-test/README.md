@@ -1,6 +1,25 @@
 # Kubernetes Resource Scaling Experiment
 
-This project automates the deployment of a Kubernetes application, dynamically adjusts resource allocations, and collects latency metrics to analyze the impact of resource scaling on performance.
+## Introduction
+
+This project automates the deployment of a Kubernetes application, dynamically adjusts resource allocations, and collects latency metrics to analyze the impact of resource scaling on performance. This provides a comprehensive analysis of Kubernetes resource allocation and its impact on service latency. The primary objective of this study is to understand the behavior of a microservice when dynamically adjusting its allocated resources while it is running. The ultimate goal is to establish a strategy that ensures minimal latency degradation while optimizing resource utilization.
+
+## Experiment Setup
+
+The experiment is conducted in a Kubernetes cluster where a test microservice is deployed with varying levels of resource allocation. The architecture consists of the following components:
+
+1. Kubernetes Cluster: A local or cloud-based cluster.
+2. Test Application: A Python-based HTTP server running in a container.
+3. Resource Management Scripts: PowerShell scripts to dynamically adjust CPU and memory allocations.
+4. Latency Measurement Scripts: PowerShell and Python scripts to collect and analyze latency data.
+
+## Tools Used
+
+* Kubernetes (kubectl): To manage deployments and resource allocation.
+* PowerShell: To automate resource scaling and collect metrics.
+* Python (pandas, matplotlib): To analyze and visualize latency data.
+* Bash: To monitor pod status.
+* lsof/Test-NetConnection: To verify and manage port-forwarding processes.
 
 ## 📌 Project Structure
 ```
